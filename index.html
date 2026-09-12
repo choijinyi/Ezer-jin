@@ -801,7 +801,9 @@ async function aiComplete(system,prompt){
           systemInstruction:{parts:[{text:system}]},
           contents:[{role:"user",parts:[{text:prompt}]}]
         })});
-      if(!r.ok) throw new Error("api-"+r.status);
+      if(!r.ok){ let m="api-"+r.status; try{ const je=await r.json();
+        m+=" · "+((je.error&&(je.error.message||je.error.type))||""); }catch(_e){}
+        throw new Error(m); }
       const j=await r.json();
       return (j.candidates&&j.candidates[0]&&j.candidates[0].content.parts.map(p=>p.text||"").join(""))||"";
     }
@@ -812,7 +814,9 @@ async function aiComplete(system,prompt){
           "anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
         body:JSON.stringify({model:"claude-opus-5",max_tokens:2000,system:system,
           messages:[{role:"user",content:prompt}]})});
-      if(!r.ok) throw new Error("api-"+r.status);
+      if(!r.ok){ let m="api-"+r.status; try{ const je=await r.json();
+        m+=" · "+((je.error&&(je.error.message||je.error.type))||""); }catch(_e){}
+        throw new Error(m); }
       const j=await r.json();
       if(j.stop_reason==="refusal") throw new Error("refusal");
       return (j.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
@@ -823,7 +827,9 @@ async function aiComplete(system,prompt){
         headers:{"Content-Type":"application/json","Authorization":"Bearer "+c.key},
         body:JSON.stringify({model:"gpt-4o-mini",
           messages:[{role:"system",content:system},{role:"user",content:prompt}]})});
-      if(!r.ok) throw new Error("api-"+r.status);
+      if(!r.ok){ let m="api-"+r.status; try{ const je=await r.json();
+        m+=" · "+((je.error&&(je.error.message||je.error.type))||""); }catch(_e){}
+        throw new Error(m); }
       const j=await r.json();
       return (j.choices&&j.choices[0]&&j.choices[0].message.content)||"";
     }
@@ -908,7 +914,9 @@ function vAI(){
       await aiRun(e.target,"한 단어로만 답한다.","연결 확인. '성공'이라고만 답해줘.");
       stat("연결 성공! 이제 퀘스천맵과 브레인스토밍에서 ✨ 버튼을 쓸 수 있습니다.","ok");
     }catch(err){
-      stat("연결 실패: 키 또는 네트워크를 확인해 주세요. (미리보기 환경에서는 외부 호출이 차단될 수 있습니다)","err");
+      const m=String(err&&err.message||err);
+      if(m.startsWith("api-")) stat("연결 실패 — 서버 응답: "+m.replace("api-","HTTP "),"err");
+      else stat("연결 실패: 네트워크가 차단된 환경일 수 있습니다(미리보기 등). 배포된 사이트에서 시도해 주세요.","err");
     }
   };
   document.getElementById("aidel").onclick=()=>{
