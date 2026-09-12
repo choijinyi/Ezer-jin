@@ -475,7 +475,7 @@ footer{
   </header>
   <main id="app"></main>
   <footer>
-    이 도구함은 복주환 《생각정리스킬》의 생각정리 도구 10종(생각 나무 계획표(만다라트)·로직트리·마인드맵·퀘스천맵·브레인스토밍·브레인라이팅·독서정리·일기·인생그래프·버킷리스트)을 웹에서 바로 쓸 수 있게 옮긴 것입니다.
+    이 도구함은 최진이 교수의 생각정리 강의 내용을 바탕으로, 생각정리 도구 10종(생각 나무 계획표(만다라트)·로직트리·마인드맵·퀘스천맵·브레인스토밍·브레인라이팅·독서정리·일기·인생그래프·버킷리스트)을 웹에서 바로 쓸 수 있게 만든 것입니다.
     구글 계정으로 로그인하면 입력 내용이 본인 구글 드라이브의 ‘생각정리 도구함 데이터’ 파일에 자동 저장되어 어느 기기에서나 이어집니다. 로그인하지 않으면 이 브라우저에만 저장됩니다. 데이터는 각자 자신의 구글 드라이브에만 저장되며, 이 앱은 자신이 만든 그 파일 외에는 어떤 드라이브 파일에도 접근할 수 없습니다.
   </footer>
 </div>
@@ -491,7 +491,7 @@ const now=()=>Date.now();
 function seedExtras(){
   return {
     mindmaps:[{
-      id:uid(),updatedAt:now(),root:"생각정리스킬 (예시)",
+      id:uid(),updatedAt:now(),root:"생각정리 강의 (예시)",
       nodes:[
         {id:uid(),text:"3원리",children:[
           {id:uid(),text:"나열한다",children:[]},
@@ -527,12 +527,12 @@ function seedExtras(){
     }],
     readings:[{
       id:uid(),updatedAt:now(),
-      title:"생각정리스킬 (예시)",author:"복주환",genre:"자기계발",
+      title:"생각정리 강의 노트 (예시)",author:"최진이",genre:"강의",
       start:"2018-11-20",end:"2018-11-22",
       before:"기초를 다시 다지고 싶었다. 머릿속에 있는 것을 명쾌하게 정리하는 법을 배우고자 한다.",
-      during:"1~7장: 생각정리의 필요성 → 못하는 이유 → 도구(만다라트·마인드맵·로직트리) → 아이디어 기획 → 독서정리 → 스피치 → 인생정리 3종 세트(일기·인생그래프·버킷리스트).",
-      quote:"사랑의 어원은 사량(思量), 즉 생각의 양이다. 사랑이 바로 질문의 근원이다.",
-      after:"구성·예시·스킬 세 가지가 장점. 데일리 리포트와 3의 로직트리부터 일상에 적용해 볼 것.",
+      during:"생각정리의 필요성 → 도구 활용(생각 나무·마인드맵·로직트리) → 아이디어 발상 → 독서정리 → 인생정리(일기·인생그래프·버킷리스트) 순서로 배웠다.",
+      quote:"생각은 눈에 보여야 정리된다. 나열하고, 분류하고, 배열하라.",
+      after:"도구마다 쓰임이 분명해서 좋았다. 데일리 리포트와 로직트리부터 일상에 적용해 볼 것.",
       oneline:"생각은 눈에 보여야 정리된다."
     }]
   };
@@ -801,43 +801,43 @@ function vHome(){
     <a class="tool-card" href="#/mandal">
       <div class="q">목표를 세우고 싶다면</div><h3>생각 나무 계획표</h3>
       <p>9×9, 81칸에 큰 꿈을 작은 목표로 분해합니다. (만다라트 기법)</p>
-      <div class="cnt">${S.mandalarts.length}개 문서 · 책 3장</div></a>
+      <div class="cnt">${S.mandalarts.length}개 문서</div></a>
     <a class="tool-card" href="#/tree">
       <div class="q">문제를 해결하고 싶다면</div><h3>로직트리</h3>
       <p>What · Why · How 순서로 생각을 일목요연하게 폅니다.</p>
-      <div class="cnt">${S.trees.length}개 문서 · 책 3장</div></a>
+      <div class="cnt">${S.trees.length}개 문서</div></a>
     <a class="tool-card" href="#/mind">
       <div class="q">전체 구조를 보고 싶다면</div><h3>마인드맵</h3>
       <p>중심 키워드에서 가지를 뻗어 한눈에 파악합니다.</p>
-      <div class="cnt">${S.mindmaps.length}개 문서 · 책 2·3장</div></a>
+      <div class="cnt">${S.mindmaps.length}개 문서</div></a>
     <a class="tool-card" href="#/qmap">
       <div class="q">생각을 확장하고 싶다면</div><h3>퀘스천맵</h3>
       <p>육하원칙으로 질문을 던집니다. 질문이 생각을 키웁니다.</p>
-      <div class="cnt">${S.qmaps.length}개 문서 · 책 2·4장</div></a>
+      <div class="cnt">${S.qmaps.length}개 문서</div></a>
     <a class="tool-card" href="#/storm">
       <div class="q">아이디어를 쏟아내고 싶다면</div><h3>브레인스토밍</h3>
       <p>비판 없이 양으로 나열하고, 그룹으로 분류합니다.</p>
-      <div class="cnt">${S.brainstorms.length}개 문서 · 책 4장</div></a>
+      <div class="cnt">${S.brainstorms.length}개 문서</div></a>
     <a class="tool-card" href="#/bwrite">
       <div class="q">모두의 의견을 모으고 싶다면</div><h3>브레인라이팅</h3>
       <p>말 대신 기록지로. 목소리 큰 사람에게 휩쓸리지 않습니다.</p>
-      <div class="cnt">${S.bwrites.length}개 문서 · 책 4장</div></a>
+      <div class="cnt">${S.bwrites.length}개 문서</div></a>
     <a class="tool-card" href="#/read">
       <div class="q">읽은 책을 남기고 싶다면</div><h3>독서정리 노트</h3>
       <p>독서 전·중·후 3단계로 한 권을 제대로 남깁니다.</p>
-      <div class="cnt">${S.readings.length}개 문서 · 책 5장</div></a>
+      <div class="cnt">${S.readings.length}개 문서</div></a>
     <a class="tool-card" href="#/diary">
       <div class="q">하루를 남기고 싶다면</div><h3>일기 · 데일리 리포트</h3>
       <p>시간을 기록하면 하루가 보입니다. 한 줄 회고로 마무리.</p>
-      <div class="cnt">${S.diary.entries.length}개 기록 · 책 7장</div></a>
+      <div class="cnt">${S.diary.entries.length}개 기록</div></a>
     <a class="tool-card" href="#/life">
       <div class="q">지나온 길을 보고 싶다면</div><h3>인생그래프</h3>
       <p>과거의 흐름을 한 페이지 곡선으로 정리하고 나를 발견합니다.</p>
-      <div class="cnt">${S.lifegraph.points.length}개 지점 · 책 7장</div></a>
+      <div class="cnt">${S.lifegraph.points.length}개 지점</div></a>
     <a class="tool-card" href="#/bucket">
       <div class="q">실천을 추적하고 싶다면</div><h3>버킷리스트</h3>
       <p>버킷리스트의 핵심은 체크리스트. 작은 것부터.</p>
-      <div class="cnt">남은 항목 ${openBucket}개 · 책 7장</div></a>
+      <div class="cnt">남은 항목 ${openBucket}개</div></a>
   </div>
   ${recent.length?`<section class="recent">
     <h3>최근 작업 이어하기</h3>
@@ -879,7 +879,7 @@ function vMandalList(){
   <div class="page-head"><h2>생각 나무 계획표</h2><div class="spacer"></div>
     <button class="btn primary" id="new">+ 새 계획표</button></div>
   <p class="principle">가로·세로 9칸, 모두 81칸. 한가운데에 <b>핵심 목표</b>를 쓰고 둘레 8칸에 하위 목표를,
-  다시 각 하위 목표마다 8개의 실천 계획을 채웁니다. 큰 꿈이 나무처럼 가지를 뻗어 작은 실천이 됩니다. (만다라트 기법) — 3장</p>
+  다시 각 하위 목표마다 8개의 실천 계획을 채웁니다. 큰 꿈이 나무처럼 가지를 뻗어 작은 실천이 됩니다. (만다라트 기법)</p>
   ${S.mandalarts.length?`<div class="doc-list">
     ${S.mandalarts.map(d=>`<div class="doc-row">
       <a class="title" href="#/mandal/${d.id}">${esc(mTitle(d))}</a>
@@ -1083,7 +1083,7 @@ function vTreeList(){
   app.innerHTML=`
   <div class="page-head"><h2>로직트리</h2></div>
   <p class="principle"><b>What(무엇) → Why(왜) → How(어떻게)</b> 순서로 정리하면, 문제의 구성요소를 파악하고
-  원인을 분석한 뒤 해결책을 찾게 됩니다. 요점은 3가지로 추리는 것이 기술입니다. — 3장</p>
+  원인을 분석한 뒤 해결책을 찾게 됩니다. 요점은 3가지로 추리는 것이 기술입니다.</p>
   <div class="tree-type">
     <button data-nt="what"><b>What tree</b><span>무엇으로 이루어져 있는가? 구성요소를 분해합니다.</span></button>
     <button data-nt="why"><b>Why tree</b><span>왜 이런 일이 생겼는가? 원인과 이유를 파고듭니다.</span></button>
@@ -1157,7 +1157,7 @@ function vMindList(){
   <div class="page-head"><h2>마인드맵</h2><div class="spacer"></div>
     <button class="btn primary" id="new">+ 새 마인드맵</button></div>
   <p class="principle">중심 키워드와 핵심 내용을 <b>한눈에</b> 파악할 수 있어 전체 구조가 보이고,
-  자연스럽게 기억력이 높아집니다. 공부와 업무 정리에 가장 널리 쓰이는 도구입니다. — 2·3장</p>
+  자연스럽게 기억력이 높아집니다. 공부와 업무 정리에 가장 널리 쓰이는 도구입니다.</p>
   ${S.mindmaps.length?`<div class="doc-list">
     ${S.mindmaps.map(d=>`<div class="doc-row">
       <a class="title" href="#/mind/${d.id}">${esc(d.root||"제목 없음")}</a>
@@ -1286,7 +1286,7 @@ function vQmapList(){
     <button class="btn primary" id="new">+ 새 퀘스천맵</button></div>
   <p class="principle">답이 아니라 <b>질문</b>으로 생각을 확장합니다. 주제 하나를 놓고
   육하원칙(누가·언제·어디서·무엇을·어떻게·왜)으로 물으면 질문이 질문을 낳습니다.
-  사랑이 바로 질문의 근원입니다 — 관심을 가진 만큼 질문이 나옵니다. — 2·4장</p>
+  관심을 가진 만큼 질문이 나옵니다.</p>
   ${S.qmaps.length?`<div class="doc-list">
     ${S.qmaps.map(d=>`<div class="doc-row">
       <a class="title" href="#/qmap/${d.id}">${esc(d.topic||"제목 없음")}</a>
@@ -1362,7 +1362,7 @@ function vStormList(){
   <div class="page-head"><h2>브레인스토밍</h2><div class="spacer"></div>
     <button class="btn primary" id="new">+ 새 브레인스토밍</button></div>
   <p class="principle">4대 원칙 — <b>자유로운 분위기, 질보다 양, 비판 금지, 결합과 개선</b>.
-  일단 쏟아내고(나열), 비슷한 것끼리 묶고(분류), 좋은 것부터 고릅니다(배열). — 4장</p>
+  일단 쏟아내고(나열), 비슷한 것끼리 묶고(분류), 좋은 것부터 고릅니다(배열).</p>
   ${S.brainstorms.length?`<div class="doc-list">
     ${S.brainstorms.map(d=>`<div class="doc-row">
       <a class="title" href="#/storm/${d.id}">${esc(d.topic||"제목 없음")}</a>
@@ -1481,7 +1481,7 @@ function vBwriteList(){
     <button class="btn primary" id="new">+ 새 브레인라이팅</button></div>
   <p class="principle">회의에서는 상급자 한두 명의 발언이 전체의 60~75%를 차지하곤 합니다.
   브레인라이팅은 <b>말 대신 기록지</b>로 아이디어를 모아, 조용한 사람의 좋은 생각이 묻히지 않게 합니다.
-  라운드마다 앞 라운드의 아이디어를 읽고 발전시켜 적으세요. — 4장</p>
+  라운드마다 앞 라운드의 아이디어를 읽고 발전시켜 적으세요.</p>
   ${S.bwrites.length?`<div class="doc-list">
     ${S.bwrites.map(d=>`<div class="doc-row">
       <a class="title" href="#/bwrite/${d.id}">${esc(d.topic||"제목 없음")}</a>
@@ -1573,7 +1573,7 @@ function vReadList(){
     <button class="btn primary" id="new">+ 새 독서노트</button></div>
   <p class="principle">다독보다 <b>한 권을 제대로</b>. 독서 전에는 표지·저자·머리말을,
   독서 중에는 목차와 핵심을, 독서 후에는 치열하게 남깁니다.
-  1만원짜리 책에서 100만원의 가치를 얻겠다는 마음으로. — 5장</p>
+  한 권을 읽어도 내 것으로 남겨야 합니다.</p>
   ${S.readings.length?`<div class="doc-list">
     ${S.readings.map(d=>`<div class="doc-row">
       <a class="title" href="#/read/${d.id}">${esc(d.title||"제목 없음")}${d.author?` <span style="color:var(--muted);font-weight:400">· ${esc(d.author)}</span>`:""}</a>
@@ -1654,8 +1654,8 @@ function vDiaryList(){
   app.innerHTML=`
   <div class="page-head"><h2>일기 · 데일리 리포트</h2><div class="spacer"></div>
     <button class="btn primary" id="today">${hasToday?"오늘 일기 이어쓰기":"+ 오늘 일기 쓰기"}</button></div>
-  <p class="principle">인생정리 3종 세트의 첫째는 <b>일기</b>입니다. 시간을 어떻게 썼는지 데일리 리포트로 적고,
-  한 줄 회고로 하루를 닫으세요. 쓰는 날이 쌓이면 나의 패턴이 보입니다. — 7장</p>
+  <p class="principle">하루를 정리하는 가장 작은 도구는 <b>일기</b>입니다. 시간을 어떻게 썼는지 데일리 리포트로 적고,
+  한 줄 회고로 하루를 닫으세요. 쓰는 날이 쌓이면 나의 패턴이 보입니다.</p>
   ${entries.length?`<div class="doc-list">
     ${entries.map(d=>`<div class="doc-row">
       <a class="title" href="#/diary/${d.id}">${fmtDay(d.date)}${d.review?` <span style="color:var(--muted);font-weight:400">— ${esc(d.review.slice(0,40))}</span>`:""}</a>
@@ -1789,7 +1789,7 @@ function vLife(){
     <span class="savenote" id="savenote">입력하면 자동 저장됩니다</span>
     <button class="btn small" id="copy">텍스트 복사</button></div>
   <p class="principle">지나간 과거의 흐름을 <b>한 페이지</b>로 정리하고, 그래프 속에서 나 자신을 발견합니다.
-  가로는 시간, 세로는 그때의 만족도(−5 ~ +5)입니다. 굴곡이 곧 이야기입니다. — 7장</p>
+  가로는 시간, 세로는 그때의 만족도(−5 ~ +5)입니다. 굴곡이 곧 이야기입니다.</p>
   <div class="lg-chartwrap" id="chartwrap">${lifeSVG()}<div class="lg-tip" id="lgtip"></div></div>
   <div class="rd-sec">
     <h3>지점 입력</h3><p class="tip">연도(또는 나이), 그때의 만족도, 무슨 일이 있었는지. 연도순으로 자동 정렬되어 그려집니다.</p>
@@ -1872,7 +1872,7 @@ function vBucket(){
     <span class="savenote" id="savenote">입력하면 자동 저장됩니다</span>
     <button class="btn small" id="copy">텍스트 복사</button></div>
   <p class="principle">버킷리스트의 핵심은 <b>체크리스트</b>입니다. 거창한 계획보다
-  작은 것부터 하나씩 실천하는 것이 인생을 바꿉니다. — 7장</p>
+  작은 것부터 하나씩 실천하는 것이 인생을 바꿉니다.</p>
   <div class="bprog">
     <div class="nums"><span class="pct">${pct}%</span>
       <span class="sub">${items.length}개 중 ${doneN}개 달성</span></div>
