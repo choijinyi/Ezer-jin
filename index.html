@@ -450,7 +450,7 @@ nav a.on{background:var(--accent);color:var(--accent-ink);font-weight:500}
 
 footer{
   margin-top:56px;padding-top:18px;border-top:1px solid var(--line);
-  font-size:12px;color:var(--muted);max-width:70ch;
+  font-size:12px;color:var(--muted);
 }
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
@@ -619,6 +619,19 @@ if(S.version!==3) S=seed();
 if(!S.diary||!Array.isArray(S.diary.entries)) S.diary={entries:[]};
 if(!S.lifegraph||!Array.isArray(S.lifegraph.points)) S.lifegraph={updatedAt:now(),points:[]};
 if(!S.todos||typeof S.todos.byDate!=="object"||!S.todos.byDate) S.todos={byDate:{}};
+/* 이전 버전 예시 데이터 이름 정리 */
+function renameLegacyExamples(){
+  try{
+    (S.mindmaps||[]).forEach(m=>{ if(m.root==="생각정리스킬 (예시)") m.root="생각정리 강의 (예시)"; });
+    (S.readings||[]).forEach(r=>{
+      if(r.title==="생각정리스킬 (예시)"){
+        r.title="생각정리 강의 노트 (예시)"; r.author="최진이"; r.genre="강의";
+        r.quote="생각은 눈에 보여야 정리된다. 나열하고, 분류하고, 배열하라.";
+      }
+    });
+  }catch(e){}
+}
+renameLegacyExamples();
 
 let saveTimer=null;
 function save(){
@@ -2038,6 +2051,7 @@ async function cloudLoad(){
       try{ data=await fr.json(); }catch(e){}
       if(data&&typeof data==="object"&&data.version){
         S=data; normalizeCloudState();
+        if(typeof renameLegacyExamples==="function") renameLegacyExamples();
         try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){}
         render();
       }
