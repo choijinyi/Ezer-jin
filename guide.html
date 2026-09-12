@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>사용 안내 — 생각정리 도구함</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@600;700&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#F5F7FA; --surface:#FFFFFF; --ink:#1E2A38; --soft:#4A5866; --muted:#8B97A6;
+  --line:#D8DFE8; --accent:#2C5F8A; --accent-soft:#E3EDF5;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#151B23; --surface:#1E2733; --ink:#E8EDF2; --soft:#B9C4CF; --muted:#7C8896;
+    --line:#37424F; --accent:#6FA8D6; --accent-soft:#243A4E;
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR",-apple-system,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size:15px;line-height:1.75;
+}
+main{max-width:860px;margin:0 auto;padding:44px 20px 80px}
+.head{display:flex;gap:20px;align-items:center;flex-wrap:wrap;border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:26px}
+.head .t{flex:1;min-width:240px}
+h1{font-family:"Hahmlet",serif;font-size:27px;margin:0 0 4px}
+.sub{color:var(--soft);margin:0}
+.qr{text-align:center;font-size:11px;color:var(--muted)}
+.qr img{width:96px;height:96px;display:block;margin:0 auto 2px;border-radius:6px;background:#fff;padding:4px}
+.addr{
+  display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:6px;
+  padding:2px 10px;font-weight:700;text-decoration:none;overflow-wrap:anywhere;
+}
+h2{font-family:"Hahmlet",serif;font-size:18px;margin:36px 0 10px;color:var(--accent)}
+p{margin:0 0 10px;max-width:72ch}
+.flow{
+  font-family:"Hahmlet",serif;font-weight:700;color:var(--accent);font-size:16px;
+  margin:6px 0 14px;
+}
+.flow em{font-style:normal;color:var(--muted);font-weight:400;padding:0 6px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.5px}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:var(--accent-soft);color:var(--accent);font-size:12.5px;white-space:nowrap}
+td:first-child{font-weight:700;white-space:nowrap}
+td:nth-child(2){color:var(--soft);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+ol,ul{margin:0 0 10px;padding-left:22px;max-width:72ch}
+li{margin-bottom:6px}
+.faq dt{font-weight:700;margin-top:14px}
+.faq dd{margin:2px 0 0;color:var(--soft);max-width:72ch}
+.tip{
+  background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;
+  padding:10px 14px;color:var(--soft);font-size:13.5px;margin:14px 0;max-width:72ch;
+}
+.back{display:inline-block;margin-top:36px;font-size:14px;color:var(--accent);text-decoration:none}
+a{color:var(--accent)}
+@media print{
+  body{background:#fff;color:#111;font-size:12px}
+  main{padding:0;max-width:none}
+  .back{display:none}
+  h2{break-after:avoid}
+  table,tr{break-inside:avoid}
+  :root{--surface:#fff;--line:#bbb;--accent:#1a3c5a;--accent-soft:#eef2f6;--soft:#333;--muted:#555}
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="head">
+    <div class="t">
+      <h1>생각정리 도구함 사용 안내</h1>
+      <p class="sub">머릿속이 복잡할 때, 종이 대신 여기에. 생각은 눈에 보여야 정리됩니다.</p>
+      <p class="sub" style="margin-top:6px">접속 주소&nbsp; <a class="addr" href="https://choijinyi.github.io/Ezer-jin/">choijinyi.github.io/Ezer-jin</a></p>
+    </div>
+    <div class="qr">
+      <img alt="접속 QR코드" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEIAQAAAACLjVdSAAABnElEQVR4nO2ZwY7DQAhDn6P8/y97D0Ayu9KqpxLUaStFycQHCwE2RObF73gF+CI+GHGC4s7I8WDk+3QK07Z4YAAhBBaOUOTpGKZ98UBgMMJYmEoVD2L6BMKKaOD/ED08RiAkMBJXS3mGx6OIE7JVRJlYcblOxzDtQeAqDf/51+spTHsQ+uXHhJHltYFMYdqGUGltBkfIBhR9ZBDTJoSQCQdmYWwklRWZxPT9CGUmWC5rqrJi1n7+NPLDGY7UXBSyazyLaQ/CVFbYtwGxtaFfPwAZy2CHR1/UtpXHBMQJlJSkxDj0pabdKUw757kyqBWDSBnYs39kctxDiyEGuz37R5QIlozw5eAjbyYxbUGEnqTcOqU2ush+/eMgtIXUlrog5UJoENMeRFgxhUmNWqmN4X71ssy3USZydJGM025+fdl/GKdFdeaG99t/LPt1Lg+mOtyvXpb9eo50VtiPWrhPYdqOMCzDXLqxkUzfiDjv2/zUkIGJCWY7fyrXlrC6SH2qdL6awrQvP3Jwqb2Y64tlPExh2u4/HuXxRcxE/ACy/LMIZaDEoQAAAABJRU5ErkJggg==">
+      휴대폰으로 스캔
+    </div>
+  </div>
+
+  <h2>1. 시작하기</h2>
+  <ol>
+    <li>위 주소로 접속합니다. 설치할 것은 없으며 컴퓨터·태블릿·휴대폰 어디서나 열립니다.</li>
+    <li>오른쪽 위 <b>[Google 계정으로 로그인]</b>을 누릅니다. 로그인하면 입력한 내용이 <b>내 구글 드라이브</b>에 자동 저장되어, 어느 기기에서든 같은 계정으로 이어서 쓸 수 있습니다.</li>
+    <li>로그인하지 않아도 쓸 수 있습니다. 이때는 지금 쓰는 브라우저에만 저장됩니다.</li>
+  </ol>
+  <p class="tip">처음 열면 각 도구에 "(예시)"가 붙은 견본이 들어 있습니다. 살펴본 뒤 삭제 버튼을 두 번 눌러 지우고 내 것으로 채우면 됩니다. 저장 버튼은 없습니다 — 입력하는 즉시 자동 저장됩니다.</p>
+
+  <h2>2. 기본 원리</h2>
+  <p>모든 도구는 한 가지 순서를 따릅니다.</p>
+  <p class="flow">나열한다<em>→</em>분류한다<em>→</em>배열한다</p>
+  <p>머릿속 생각을 일단 꺼내어 적고(나열), 비슷한 것끼리 묶고(분류), 순서를 매기면(배열) 복잡하던 생각이 저절로 정리됩니다.</p>
+
+  <h2>3. 도구 한눈에 보기</h2>
+  <table>
+    <tr><th>도구</th><th>이럴 때</th><th>이렇게 씁니다</th></tr>
+    <tr><td>생각 나무 계획표</td><td>목표를 세우고 싶을 때</td><td>가운데에 핵심 목표를 쓰면 둘레 8칸의 하위 목표가 바깥 블록으로 가지를 뻗습니다. 81칸을 다 채우지 않아도 됩니다.</td></tr>
+    <tr><td>로직트리</td><td>문제를 풀고 싶을 때</td><td>What(무엇)·Why(왜)·How(어떻게) 중 하나를 골라 가지를 3개 안팎으로 뻗으며 파고듭니다.</td></tr>
+    <tr><td>마인드맵</td><td>전체 구조를 보고 싶을 때</td><td>중심 키워드를 적고 개요에 가지를 적으면 지도가 실시간으로 그려집니다.</td></tr>
+    <tr><td>퀘스천맵</td><td>생각을 넓히고 싶을 때</td><td>주제 하나를 놓고 누가·언제·어디서·무엇을·어떻게·왜로 질문을 쌓습니다. 답보다 질문이 먼저입니다.</td></tr>
+    <tr><td>브레인스토밍</td><td>아이디어가 필요할 때</td><td>비판 없이 양으로 쏟아낸 뒤, 그룹을 만들어 비슷한 것끼리 묶습니다.</td></tr>
+    <tr><td>브레인라이팅</td><td>여럿의 의견을 모을 때</td><td>말 대신 기록지로 라운드마다 1인 3개씩 적어, 목소리 큰 사람에게 휩쓸리지 않게 합니다.</td></tr>
+    <tr><td>독서정리 노트</td><td>읽은 책을 남기고 싶을 때</td><td>독서 전(동기)·중(내용)·후(느낌) 3단계로 적고, [독서페이퍼로 복사]로 글 한 편을 만듭니다.</td></tr>
+    <tr><td>일기 · 데일리 리포트</td><td>하루를 남기고 싶을 때</td><td>시간 사용 기록과 한 줄 회고, 그리고 '내일 가장 중요한 일' 하나로 하루를 닫습니다.</td></tr>
+    <tr><td>인생그래프</td><td>지나온 길을 볼 때</td><td>연도·만족도(−5~+5)·사건을 적으면 인생 곡선이 그려집니다. 굴곡이 곧 이야기입니다.</td></tr>
+    <tr><td>버킷리스트</td><td>실천을 추적할 때</td><td>이루고 싶은 것을 적고 하나씩 체크합니다. 완료 항목은 지우지 말고 달성률을 쌓으세요.</td></tr>
+  </table>
+
+  <h2>4. 추천 사용 흐름</h2>
+  <ul>
+    <li><b>목표를 이루는 흐름</b> — 생각 나무 계획표에 목표를 펼치고 → 하위 목표 하나를 [로직트리로 보내기] → 말단 실천 항목을 [버킷리스트로 보내기] → 하나씩 체크합니다.</li>
+    <li><b>하루의 흐름</b> — 아침에 홈 화면의 <b>오늘 해야 할 일</b>을 확인하고(어젯밤 일기에 적은 '내일 가장 중요한 일'이 자동으로 올라옵니다) → 저녁에 일기로 하루를 닫으며 내일의 한 가지를 정합니다.</li>
+    <li><b>독서의 흐름</b> — 읽기 전 독서노트에 동기를 적고 → 읽으며 핵심을 남기고 → 다 읽으면 독서페이퍼로 복사해 기록을 완성합니다.</li>
+  </ul>
+
+  <h2>5. 자주 묻는 질문</h2>
+  <dl class="faq">
+    <dt>내 데이터는 어디에 저장되나요?</dt>
+    <dd>로그인하면 본인 구글 드라이브의 "생각정리 도구함 데이터.json" 파일 하나에 저장됩니다. 운영자를 포함해 다른 사람은 볼 수 없습니다. 이 앱은 자신이 만든 그 파일 외에는 드라이브의 어떤 파일에도 접근할 수 없습니다.</dd>
+    <dt>휴대폰과 컴퓨터에서 같이 쓸 수 있나요?</dt>
+    <dd>네. 같은 구글 계정으로 로그인하면 어디서든 같은 내용이 이어집니다.</dd>
+    <dt>드라이브의 데이터 파일을 지우면 어떻게 되나요?</dt>
+    <dd>앱 기록이 모두 사라지니 지우지 마세요. 실수로 지웠다면 드라이브 휴지통에서 복원할 수 있습니다.</dd>
+    <dt>앱 연결을 끊고 싶어요.</dt>
+    <dd><a href="https://myaccount.google.com/connections">구글 계정 → 보안 → 서드파티 앱 액세스</a>에서 언제든 해제할 수 있습니다.</dd>
+    <dt>비용이 드나요?</dt>
+    <dd>아니요. 완전히 무료이며 광고도 없습니다.</dd>
+  </dl>
+
+  <p style="margin-top:30px;color:var(--muted);font-size:12.5px">
+    이 도구함은 최진이 교수의 생각정리 강의 내용을 바탕으로 만들었습니다 ·
+    <a href="./privacy.html">개인정보처리방침</a>
+  </p>
+  <a class="back" href="./">← 생각정리 도구함 열기</a>
+</main>
+</body>
+</html>
