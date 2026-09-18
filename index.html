@@ -551,6 +551,12 @@ nav a.on{background:var(--accent);color:var(--accent-ink);font-weight:500}
   padding:16px 18px;text-decoration:none;color:var(--ink);
 }
 .abt:hover{border-color:var(--accent)}
+.abt.bookcard{display:flex;gap:14px;align-items:center}
+.abt .mini{
+  flex:none;width:52px;height:auto;border-radius:3px;
+  box-shadow:0 1px 4px rgba(30,42,56,.2);
+}
+.abt .txt{min-width:0}
 .abt .k{display:block;font-size:11.5px;color:var(--accent);font-weight:600;margin-bottom:4px}
 .abt b{display:block;font-family:"Hahmlet",serif;font-size:16px;margin-bottom:3px;font-weight:700}
 .abt .d{display:block;font-size:12.5px;color:var(--muted);line-height:1.5}
@@ -1127,10 +1133,13 @@ function vHome(){
     </div>
   </section>`:""}
   <section class="abouts">
-    <a class="abt" href="about.html" target="_blank" rel="noopener">
-      <span class="k">함께 읽는 책</span>
-      <b>AI시대 생각의 주도권</b>
-      <span class="d">답이 흔해질수록 질문이 비싸진다 · 최진이 저 · 이 도구함의 가이드북</span>
+    <a class="abt bookcard" href="about.html" target="_blank" rel="noopener">
+      <img class="mini" src="book-cover.jpg" width="434" height="640" alt="《AI시대 생각의 주도권》 표지" loading="lazy">
+      <span class="txt">
+        <span class="k">함께 읽는 책</span>
+        <b>AI시대 생각의 주도권</b>
+        <span class="d">답이 흔해질수록 질문이 비싸진다 · 최진이 저 · 이 도구함의 가이드북</span>
+      </span>
     </a>
     <a class="abt" href="about.html" target="_blank" rel="noopener">
       <span class="k">만든 사람</span>
