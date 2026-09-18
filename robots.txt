@@ -1,0 +1,31 @@
+# 생각정리 도구함 — 모든 검색·AI 인용 봇에 열려 있습니다.
+User-agent: *
+Allow: /
+
+# AI 답변에 인용하는 봇 (명시적 허용)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# 모델 학습 봇 (허용)
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://choijinyi.github.io/Ezer-jin/sitemap.xml
