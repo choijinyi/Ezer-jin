@@ -22,7 +22,8 @@
 4. **API 및 서비스 → 사용자 인증 정보 → 사용자 인증 정보 만들기 → OAuth 클라이언트 ID**
    - 애플리케이션 유형: **웹 애플리케이션**
    - **승인된 자바스크립트 원본**에 배포 주소의 원본(origin)을 추가한다.
-     - GitHub Pages: `https://choijinyi.github.io`
+     - 운영 도메인: `https://thinktool.kr`
+     - GitHub Pages(구 주소): `https://choijinyi.github.io`
      - 로컬 테스트용(선택): `http://localhost:8000`
    - 만들어진 **클라이언트 ID**(`....apps.googleusercontent.com`)를 복사한다.
 
@@ -38,7 +39,7 @@ window.TT_CONFIG = {
 
 1. 이 저장소의 **Settings → Pages**로 간다.
 2. Source를 **Deploy from a branch**로 두고, 배포할 브랜치와 `/ (root)`를 선택해 저장한다.
-3. 몇 분 뒤 `https://choijinyi.github.io/ezer-jin/` 주소가 열린다. 이 링크를 공유하면 누구나 사용할 수 있다.
+3. 몇 분 뒤 `https://thinktool.kr/` 주소가 열린다. 이 링크를 공유하면 누구나 사용할 수 있다.
 
 > 주소가 위와 다르면(사용자명·저장소명이 다르면) 1번의 "승인된 자바스크립트 원본"도 그 주소의 원본으로 맞춰야 한다.
 

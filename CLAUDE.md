@@ -9,7 +9,8 @@
 
 ## 배포 정보
 
-- 공개 주소: https://choijinyi.github.io/Ezer-jin/ (저장소 이름이 대문자 E라 소문자 주소는 404)
+- 공개 주소: https://thinktool.kr/ (커스텀 도메인, 저장소 루트의 CNAME 파일로 연결)
+- 구 주소 https://choijinyi.github.io/Ezer-jin/ 는 새 도메인으로 301 리다이렉트된다
 - 저장소: choijinyi/Ezer-jin, 작업 브랜치: `claude/lucid-volta-t8pgj6` (Pages가 이 브랜치 루트에서 배포. 푸시하면 1~2분 내 자동 반영)
 - 구글 OAuth: GCP 프로젝트 "AI Thinking"(ai-thinking-508407), 클라이언트 ID는 `config.js`에 있음(공개값). 동의 화면은 프로덕션 게시 완료, 권한은 비민감 범위만(drive.file, openid, email, profile).
 
